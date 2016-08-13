@@ -1,0 +1,22 @@
+{
+  "name": "sh4kermaker/SimpleMvcSkeleton",
+  "description": "Simple Mvc Skeleton App",
+  "authors": [
+    {
+      "name": "Martin Panik",
+      "email": "martin.w.panik@gmail.com"
+    }
+  ],
+  "require": {"sh4kermaker/SimpleMvc": "dev-master"},
+  "repositories": [
+    {
+      "url": "https://github.com/sh4kermaker/SimpleMvc.git",
+      "type": "git"
+    }
+  ],
+  "autoload": {
+    "psr-0": {
+      "Application": "src/"
+    }
+  }
+}

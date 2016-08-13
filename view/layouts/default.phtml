@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="sk-SK">
+<head>
+    <base href="<?= '/' . $_SERVER["HTTP_HOST"] ?>"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><?= $this->getTitle() ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="<?= $this->getDescription() ?>"/>
+    <meta name="keywords" content="<?= $this->getKeywords() ?>"/>
+    <meta name="robots" content="index, follow">
+    <!-- icons -->
+    <link rel="shortcut icon" href="<?= staticPath("favicon.ico"); ?>"/>
+    <link rel="stylesheet" href="<?= staticPath("css/style.css") ?>">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="<?= staticPath("js/functions.js") ?>"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <?= $this->getController()->renderView(); ?>
+        </div>
+    </div>
+</body>
+</html>
