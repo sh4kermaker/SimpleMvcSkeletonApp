@@ -40,9 +40,17 @@ if (APPLICATION_ENV == 'production'){
     ini_set('display_errors', 0);
 }
 
+global $config, $staticPath;
+
 $config = getConfig();
 
-// Pripojenie k databaze ak je definovana
+if (!isset($config['staticPath'])){
+    throw new Exception("static path has to be set in config");
+}
+
+$staticPath = $config['staticPath'];
+
+// Pripojenie k databaze ak je definovane
 if (!empty($config['dbHost'])){
     Db::pripoj($config['dbHost'], $config['dbPouzivatel'], $config['dbHeslo'], $config['dbNazov']);
 }
@@ -50,4 +58,4 @@ if (!empty($config['dbHost'])){
 $queryStringPathParam = [$_SERVER['REQUEST_URI']];
 
 $router = new RouterController($queryStringPathParam);
-$router->renderView(); 
+$router->renderView();
